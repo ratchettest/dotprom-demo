@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.2-sdk AS build-env
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build-env
 RUN mkdir /app
 WORKDIR /app
 
@@ -12,7 +12,7 @@ RUN dotnet build
 RUN dotnet publish -c Release -o out
 
 # build runtime image
-FROM microsoft/dotnet:2.2-aspnetcore-runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim
 RUN mkdir /app
 WORKDIR /app
 

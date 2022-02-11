@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = prometheus_dotnetcore_demo
+build_property.ProjectDir = /home/laiman.kuetx@academy.cc/git/dotprom-demo/prometheus-dotnetcore-demo/

@@ -12236,11 +12236,11 @@
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/locationsapi.csproj",
+      "projectUniqueName": "/home/laiman.kuetx@academy.cc/git/dotprom-demo/locationsapi/locationsapi.csproj",
       "projectName": "locationsapi",
-      "projectPath": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/locationsapi.csproj",
+      "projectPath": "/home/laiman.kuetx@academy.cc/git/dotprom-demo/locationsapi/locationsapi.csproj",
       "packagesPath": "/home/laiman.kuetx@academy.cc/.nuget/packages/",
-      "outputPath": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/obj/",
+      "outputPath": "/home/laiman.kuetx@academy.cc/git/dotprom-demo/locationsapi/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

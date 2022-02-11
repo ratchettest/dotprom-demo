@@ -12236,11 +12236,11 @@
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/peopleapi/peopleapi.csproj",
+      "projectUniqueName": "/home/laiman.kuetx@academy.cc/git/dotprom-demo/peopleapi/peopleapi.csproj",
       "projectName": "peopleapi",
-      "projectPath": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/peopleapi/peopleapi.csproj",
+      "projectPath": "/home/laiman.kuetx@academy.cc/git/dotprom-demo/peopleapi/peopleapi.csproj",
       "packagesPath": "/home/laiman.kuetx@academy.cc/.nuget/packages/",
-      "outputPath": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/peopleapi/obj/",
+      "outputPath": "/home/laiman.kuetx@academy.cc/git/dotprom-demo/peopleapi/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

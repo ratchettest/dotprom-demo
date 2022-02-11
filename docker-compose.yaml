@@ -6,4 +6,29 @@ services:
     container_name: dotnet-application
     image: dotnet-application
     ports:
-      - "82:5000"
+      - "82:3000"
+
+  peopleapi:
+    build:
+      context: ./peopleapi
+    container_name: peopleapi
+    image: peopleapi
+    ports:
+      - 8082:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:8080
+ 
+  locationsapi:
+    build:
+      context: ./locationsapi
+    container_name: locationapi
+    image: locationapi
+    image: locationsapi
+    ports:
+      - 8084:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:8080
+
+

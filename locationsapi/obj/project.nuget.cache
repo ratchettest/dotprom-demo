@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0c2FNb1aByPTmfqD5ckVr28ycS3MI5ClhkhSzM9sjQSV+q4eR2vp4N0Xm0x66en6eLLp56X0QCB451ZaTC+GUw==",
+  "dgSpecHash": "QUaHvpIveIG+pIHFR1WL3gBUoMughT2oSs4q7Q8X+YzlmbuJi4DLQOXFR3bJKhHEKFGZOue4KAASW7rmNLCF9A==",
   "success": true,
-  "projectFilePath": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/locationsapi.csproj",
+  "projectFilePath": "/home/laiman.kuetx@academy.cc/git/dotprom-demo/locationsapi/locationsapi.csproj",
   "expectedPackageFiles": [
     "/home/laiman.kuetx@academy.cc/.nuget/packages/microsoft.aspnet.webapi.client/5.2.6/microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "/home/laiman.kuetx@academy.cc/.nuget/packages/microsoft.aspnetcore/2.2.0/microsoft.aspnetcore.2.2.0.nupkg.sha512",

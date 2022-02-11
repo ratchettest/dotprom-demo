@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N00qFARrfYGe3ns25BsDRbl6To2lGAaPWo6yiC+y7ERpiZs00K93tKrFjcJLjv4CALi/h2fVo5Tyy6UgjQZ6bg==",
+  "dgSpecHash": "jatK/K6Czuv+R96bxR2QtjAkYhc4FDYxjJTNzO3/3U503+36mWT0ZuSBnb059jc2vgGmg9fsnymRHnh0pgmqsg==",
   "success": true,
-  "projectFilePath": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/peopleapi/peopleapi.csproj",
+  "projectFilePath": "/home/laiman.kuetx@academy.cc/git/dotprom-demo/peopleapi/peopleapi.csproj",
   "expectedPackageFiles": [
     "/home/laiman.kuetx@academy.cc/.nuget/packages/microsoft.aspnet.webapi.client/5.2.6/microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "/home/laiman.kuetx@academy.cc/.nuget/packages/microsoft.aspnetcore/2.2.0/microsoft.aspnetcore.2.2.0.nupkg.sha512",
