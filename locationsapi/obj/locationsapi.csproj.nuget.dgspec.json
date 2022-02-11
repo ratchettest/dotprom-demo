@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/locationsapi.csproj": {}
+  },
+  "projects": {
+    "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/locationsapi.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/locationsapi.csproj",
+        "projectName": "locationsapi",
+        "projectPath": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/locationsapi.csproj",
+        "packagesPath": "/home/laiman.kuetx@academy.cc/.nuget/packages/",
+        "outputPath": "/home/laiman.kuetx@academy.cc/git/dotnet-core-prometheus-grafana/locationsapi/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/laiman.kuetx@academy.cc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "targetAlias": "netcoreapp2.2",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "targetAlias": "netcoreapp2.2",
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Mvc.Formatters.Xml": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "prometheus-net.AspNetCore": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
