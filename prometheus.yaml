@@ -1,0 +1,12 @@
+global:
+  scrape_interval:     5s
+  evaluation_interval: 30s
+scrape_configs:
+- job_name: my-application
+  honor_labels: true
+  static_configs:
+  - targets: ['dotnet-application:5000','locationsapi:8080', 'peopleapi:8080']
+- job_name: iis
+  honor_labels: true
+  static_configs:
+  - targets: ['uatwebarc01:5000']
