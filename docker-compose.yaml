@@ -6,7 +6,7 @@ services:
     container_name: dotnet-application
     image: dotnet-application
     ports:
-      - "82:3000"
+      - 82:5000
 
   peopleapi:
     build:
@@ -30,5 +30,3 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://*:8080
-
-
