@@ -37,6 +37,16 @@ services:
     networks:
       - dotnetcorepromgrafana
 
+  prometheus-dotnetcore-demo:
+    build:
+      context: ./prometheus-dotnetcore-demo
+    container_name: prometheus_dotnetcore_demo
+    image: prometheus_dotnetcore_demo
+    ports:
+      - 4321:1234
+    networks:
+      - dotnetcorepromgrafana
+
   prometheus:
     container_name: prometheus-svc
     image: prom/prometheus

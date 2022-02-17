@@ -9,4 +9,4 @@ scrape_configs:
 - job_name: iis
   honor_labels: true
   static_configs:
-  - targets: ['uatwebarc01:5000']
+  - targets: ['uatarcweb01.academy.cc:9182','devopstest:5000']
