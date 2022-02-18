@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 using peopleapi.Models;
 
@@ -12,6 +13,14 @@ namespace peopleapi.Controllers
     [ApiController]
     public class PeopleController : ControllerBase
     {
+        private readonly IDelayFactory delayGenerator;
+        private readonly ILogger<PeopleController> logger;
+
+        public PeopleController(IDelayFactory delayFactory, ILogger<PeopleController> logger) {
+            this.logger = logger;
+            delayGenerator = delayFactory;
+        }
+
         /// <summary>
         /// GET The list of people
         /// </summary>
@@ -20,8 +29,10 @@ namespace peopleapi.Controllers
         /// </returns>
         /// <response code="200">Returns the list of People records</response>
         [HttpGet]
-        public ActionResult<IEnumerable<People>> Get()
+        public async Task<ActionResult<IEnumerable<People>>> Get()
         {
+            await delayGenerator.Delay();
+
             List<People> peopleList = new List<People>();
             peopleList.Add(new People() {firstname = "Dale", lastname = "Bingham", title="Mr.", middlename="E."});
             peopleList.Add(new People() {firstname = "Richard", lastname = "Cranium", title="Mr.", middlename="B."});
@@ -34,8 +45,8 @@ namespace peopleapi.Controllers
         /// GET a people record
         /// </summary>
         /// <returns>
-        /// HTTP Status showing it was found or that there is an error. 
-        /// And the the person matching this ID, which we are faking for now. :) 
+        /// HTTP Status showing it was found or that there is an error.
+        /// And the the person matching this ID, which we are faking for now. :)
         /// </returns>
         /// <response code="200">Returns the People record</response>
         [HttpGet("{id}")]
@@ -48,6 +59,5 @@ namespace peopleapi.Controllers
             p.title = "Mr.";
             return Ok(p);
         }
-
     }
 }
