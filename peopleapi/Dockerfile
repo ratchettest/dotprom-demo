@@ -1,20 +1,17 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build-env
-RUN mkdir /app
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
+EXPOSE 80
+EXPOSE 443
 
-# copy the project and restore as distinct layers in the image
-COPY ./*.csproj ./
-RUN dotnet restore
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet restore "peopleapi.csproj"
+RUN dotnet publish -c Release -o /publish --no-restore
 
-# copy the rest and build
-COPY ./ ./
-RUN dotnet build
-RUN dotnet publish -c Release -o out
-
-# build runtime image
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim
-RUN mkdir /app
+FROM base AS final
 WORKDIR /app
-
-COPY --from=build-env /app/out ./
+COPY --from=build /publish .
 ENTRYPOINT ["dotnet", "peopleapi.dll"]
