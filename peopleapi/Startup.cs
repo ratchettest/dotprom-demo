@@ -8,6 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog.Extensions.Logging;
+using Microsoft.Extensions.Logging;
+using Prometheus;
+
 
 namespace peopleapi {
     public class Startup {
@@ -25,7 +29,22 @@ namespace peopleapi {
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory) {
+
+            // Custom Metrics to count requests for each endpoint and the method
+            var counter = Metrics.CreateCounter("locationsapi_path_counter", "Counts requests to the Locations API endpoints", new CounterConfiguration
+            {
+                LabelNames = new[] { "method", "endpoint" }
+            });
+            app.Use((context, next) =>
+            {
+                counter.WithLabels(context.Request.Method, context.Request.Path).Inc();
+                return next();
+            });
+            // Use the Prometheus middleware
+            app.UseMetricServer();
+            app.UseHttpMetrics();
+            
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
@@ -35,7 +54,10 @@ namespace peopleapi {
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            
+            loggerFactory.AddFile("Logs/myapp-{Date}.txt");
+            
+            //UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
