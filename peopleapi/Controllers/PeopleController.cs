@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
 using peopleapi.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace peopleapi.Controllers
-{
+namespace peopleapi.Controllers {
     [Route("/")]
     [ApiController]
     public class PeopleController : ControllerBase
     {
-        private readonly IDelayFactory delayGenerator;
+        private readonly IBehaviorManager behaviorManager;
         private readonly ILogger<PeopleController> logger;
 
-        public PeopleController(IDelayFactory delayFactory, ILogger<PeopleController> logger) {
+        public PeopleController(IBehaviorManager behaviorManager, ILogger<PeopleController> logger) {
             this.logger = logger;
-            delayGenerator = delayFactory;
+            this.behaviorManager = behaviorManager;
         }
 
         /// <summary>
@@ -31,7 +27,7 @@ namespace peopleapi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<People>>> Get()
         {
-            await delayGenerator.Delay();
+            await behaviorManager.DoBehavior();
 
             List<People> peopleList = new List<People>();
             peopleList.Add(new People() {firstname = "Dale", lastname = "Bingham", title="Mr.", middlename="E."});
