@@ -27,6 +27,8 @@ obj/
 *_REMOTE_*.txt
 
 ### VisualStudioCode ###
+.vs/
+.vs/*
 .vscode/
 .vscode/*
 !.vscode/settings.json

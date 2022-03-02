@@ -28,7 +28,6 @@ services:
       context: ./locationsapi
     container_name: locationapi
     image: locationapi
-    image: locationsapi
     ports:
       - 8084:8080
     environment:

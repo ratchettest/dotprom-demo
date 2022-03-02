@@ -1,6 +1,9 @@
 ﻿using Prometheus;
 using System;
 using System.Threading;
+using Serilog;
+using Microsoft.Extensions.Hosting;
+
 
 namespace prometheus_dotnetcore_demo
 {
@@ -8,6 +11,12 @@ namespace prometheus_dotnetcore_demo
     {
         static void Main(string[] args)
         {
+            // simple serilog logger
+            Log.Logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File("log.log", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
+
             Console.WriteLine("Hello and welcome to the prometheus dotnetcore demo!");
             Console.WriteLine("We will attempt to mimic a live system's behaviour in terms of warnings and exceptions." + Environment.NewLine);
             int milliSecondsToSleep = 500;
@@ -33,11 +42,13 @@ namespace prometheus_dotnetcore_demo
                 {
                     prom_warning.Inc(1);
                     Console.WriteLine("\nOops that was a warning  - tread carefully...\n");
+                    Log.Information("I warned you");
                 }
                 else if (loop_counter == exception_interval)
                 {
                     prom_exception.Inc(1);
                     Console.WriteLine("\nAlarm! call 911 - an exception has occured!\n");
+                    Log.Fatal("SERENITY NOW");
                     loop_counter = 0;
                 }
                 loop_counter++;
@@ -49,5 +60,6 @@ namespace prometheus_dotnetcore_demo
             var metricServer = new MetricServer(port: 1234);
             metricServer.Start();
         }
+
     }
 }
