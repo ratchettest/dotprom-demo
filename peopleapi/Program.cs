@@ -8,7 +8,7 @@ namespace peopleapi {
             var logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
                 .WriteTo.Console()
-                .WriteTo.File("log.log", rollingInterval: RollingInterval.Day)
+                .WriteTo.File("/var/log/peopleapi/people.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
             CreateHostBuilder(args)

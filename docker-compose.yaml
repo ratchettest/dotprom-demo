@@ -17,6 +17,8 @@ services:
     image: peopleapi
     ports:
       - 8082:8080
+    volumes:
+      - /var/log/peopleapi:/var/log/peopleapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://*:8080

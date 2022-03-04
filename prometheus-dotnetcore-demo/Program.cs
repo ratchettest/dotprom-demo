@@ -14,7 +14,7 @@ namespace prometheus_dotnetcore_demo
             // simple serilog logger
             Log.Logger = new LoggerConfiguration()
             .WriteTo.Console()
-            .WriteTo.File("/var/log/promdotnetdemo/log.log", rollingInterval: RollingInterval.Day)
+            .WriteTo.File("/var/log/promdotnetdemo/promdot.log", rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
             Console.WriteLine("Hello and welcome to the prometheus dotnetcore demo!");
